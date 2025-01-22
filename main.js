@@ -7,6 +7,18 @@
  const colorPicker = document.getElementById("colorPicker");
  const applyColorBtn = document.getElementById("applyColor");
 
+ // Function to set the primary color
+function setPrimaryColor(color) {
+  document.documentElement.style.setProperty('--primary-color', color);
+}
+
+// Retrieve the saved color from localStorage and apply it
+const savedColor = localStorage.getItem('primaryColor');
+if (savedColor) {
+    setPrimaryColor(savedColor); // Apply saved color
+    colorPicker.value = savedColor; // Sync color picker with saved color
+}
+
 // Menu Button Functionality
  menuBtn.addEventListener("click", (e) => {
     navLinks.classList.toggle("open");
@@ -40,9 +52,11 @@
  });
 
  //Apply the selected color when the "Apply" button is clicked
- applyColorBtn.addEventListener("click", (e) => {
+ applyColorBtn.addEventListener("click", () => {
   const newColor = colorPicker.value; //Get the color selected by the user
   document.documentElement.style.setProperty('--primary-color', newColor); //Change the Primary color
+  setPrimaryColor(newColor); // Change the color
+  localStorage.setItem('primaryColor', newColor); //Save the new color to localStorage
   colorModal.style.display = "none"; //Close modal after applying color
  });
 
@@ -54,42 +68,44 @@
  });
 
 
+ //Initialize ScrollReveal
+ const sr = ScrollReveal();
 
- scrollRevealOption().reveal(".header__image img", {
+ sr.reveal(".header__image img", {
    distance: "50px",
    origin:"right",
    duration: 1000,
  });
 
- scrollRevealOption().reveal(".header__image h1", {
+ sr.reveal(".header__image h1", {
    distance: "50px",
    origin:"right",
    duration: 1000,
    delay: 500,
  });
 
- scrollRevealOption().reveal(".header__image p", {
+ sr.reveal(".header__image p", {
    distance: "50px",
    origin:"right",
    duration: 1000,
    delay: 1000,
  });
 
- scrollRevealOption().reveal(".header__image form", {
+ sr.reveal(".header__image form", {
    distance: "50px",
    origin:"right",
    duration: 1000,
    delay: 1500,
  });
 
- scrollRevealOption().reveal(".header__image .bar", {
+ sr.reveal(".header__image .bar", {
    distance: "50px",
    origin:"right",
    duration: 1000,
    delay: 2000,
  });
 
- scrollRevealOption().reveal(".header__image__card", {
+ sr.reveal(".header__image__card", {
    distance: "50px",
    origin:"right",
    duration: 1000,

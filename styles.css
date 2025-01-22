@@ -301,7 +301,7 @@ nav {
     nav{
         position: sticky;
         padding-block: 2rem 0;
-        padding-inline: 1rem;
+        padding-inline: 1rem; 
         width: 100%;
         max-width: var(--max-width);
         margin-inline: auto;
@@ -444,36 +444,37 @@ nav {
 
 .modal-content {
     position: relative;
-    margin: 15% auto; /* Center the modal */
-    padding: 20px;
-    width: 300px;
+    margin: 10% auto; /* Center the modal */
+    padding: 40px;
+    width: 400px;
     background-color: var(--white);
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     text-align: center;
 }
 
 .modal-content label {
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 1.2rem;
+    font-weight: 600;
     color: var(--text-dark);
+    gap: 1.5rem;
 }
 
 .modal-content input[type="color"] {
-    margin: 1rem 0;
-    padding: 0.5rem;
+    margin: 1.5rem 0;
+    padding: 0.75rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .modal-content button {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.2rem;
     background-color: var(--primary-color);
     color: var(--white);
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -482,11 +483,26 @@ nav {
     background-color: var(--secondary-color);
 }
 
+.modal.active {
+    display: block;
+}
+
+.modal-background {
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    backdrop-filter: blur(5px); /* Apply the blur effect */
+}
+
 .close {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 1.5rem;
+    top: 15px;
+    right: 15px;
+    font-size: 2rem;
     color: var(--text-dark);
     cursor: pointer;
     transition: color 0.3s;

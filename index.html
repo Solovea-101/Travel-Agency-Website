@@ -8,13 +8,15 @@
     rel="stylesheet"
 />
 <link rel="stylesheet" href="styles.css" />
-    <title>Web Page</title>
+<link rel="icon" type="image/png" href="assets/icons/flight-takeoff-line.png">
+    <title>Tour Travels</title>
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
     <nav>
         <div class="nav__header">
             <div class="nav__logo">
-                <a href="#">TOur<span>Travels</span>.</a>
+                <a href="#">Tour<span>Travels</span>.</a>
             </div>
             <div class="nav__menu__btn" id="menu-btn">
                 <span><i class="ri-menu-line"></i></span>
@@ -33,10 +35,11 @@
             <button class="btn sign__in">Sign In</button>
         </div>
         <div class="modal" id="colorModal">
+            <div class="modal-background"></div>
             <div class="modal-content">
                 <span class="close" id="closeModal">&times;</span>
-                <label for="colorPicker">Selectt a Color:</label>
-                <input type="color" id="colorPicker">
+                <label for="colorPicker">Change Color:</label><br>
+                <input type="color" id="colorPicker"><br>
                 <button id="applyColor">Apply</button>
             </div>
         </div>
@@ -92,7 +95,7 @@
         </div>
     </header>
 
-    <script src="https://unpkg.com/scrollreveal"></script>
+    
     <script src="main.js"></script>
     
 </body>
